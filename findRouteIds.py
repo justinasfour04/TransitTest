@@ -1,5 +1,4 @@
 import csv
-import time
 
 LOCATION = 'GTFS/' # Change to the directory name where GTFS files located
 
@@ -22,7 +21,7 @@ def getTripsThroughGrandCentral():
     grandCentralStopIds = findGrandCentralStopIds()
     with open('{0}stop_times.txt'.format(LOCATION)) as stopTimesFile:
         reader = csv.DictReader(stopTimesFile)
-        routeThroughGrandCentral = ''
+        routeThroughGrandCentral = '' # Use String to make it hashable for set
         isGrandCentralRoute = False
         grandCentralTripId = ''
         for row in reader:
@@ -60,10 +59,7 @@ def getGrandCentralRouteIds():
 
 
 if __name__ == "__main__":
-    t0 = time.time()
     print(getGrandCentralRouteIds())
-    t1 = time.time()
-    print(t1 - t0)
 
 
     
