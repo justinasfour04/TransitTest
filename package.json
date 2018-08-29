@@ -1,0 +1,23 @@
+{
+  "name": "transitapptest",
+  "version": "1.0.0",
+  "description": "Transit Homework Assignment",
+  "main": "Main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinasfour04/TransitTest.git"
+  },
+  "author": "Justin Asfour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinasfour04/TransitTest/issues"
+  },
+  "homepage": "https://github.com/justinasfour04/TransitTest#readme"
+}

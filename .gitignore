@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# ESLint
+.eslintrc.json
+
+# VSCode
+.vscode
+
+# Data Directories
+GTFS
+GTFScsv
