@@ -15,8 +15,8 @@ class RouteFinder {
 		const stopsReader = new CsvReader('stops.txt');
 		await stopsReader.readLines().catch(logError);
 		
-		let stops = stopsReader.rows.filter(stop => stop.get('stopName').includes(stopName));
-		return new Set(stops.map(stop => stop.get('stopId')));
+		let stops = stopsReader.rows.filter(stop => stop['stop_name'].includes(stopName));
+		return new Set(stops.map(stop => stop['stop_id']));
 	}
 
 	/**
@@ -29,8 +29,8 @@ class RouteFinder {
 		const stopTimesReader = new CsvReader('stop_times.txt');
 		await stopTimesReader.readLines().catch(logError);
 
-		let trips = stopTimesReader.rows.filter(stopTimes => stopIds.has(stopTimes.get('stopId')));
-		return new Set(trips.map(trip => trip.get('tripId')));
+		let trips = stopTimesReader.rows.filter(stopTimes => stopIds.has(stopTimes['stop_id']));
+		return new Set(trips.map(trip => trip['trip_id']));
 	}
 
 	/**
@@ -43,8 +43,8 @@ class RouteFinder {
 		const tripsReader = new CsvReader('trips.txt');
 		await tripsReader.readLines().catch(logError);
 
-		let routes = tripsReader.rows.filter(trips => tripIds.has(trips.get('tripId')));
-		return new Set(routes.map(route => route.get('routeId')));
+		let routes = tripsReader.rows.filter(trips => tripIds.has(trips['trip_id']));
+		return new Set(routes.map(route => route['route_id']));
 	}
 }
 

@@ -1,3 +1,5 @@
+'use strict';
+
 const console = require('console');
 
 class Util {

@@ -24,18 +24,15 @@ class CsvReader {
 		
 		const endOfLineRegex = /[\r\n]+/;
 		let rows = file.split(endOfLineRegex); // Get csv rows
-		const headers = rows[0].split(',').map(header => {
-			const snakeCaseRegex = /(_\w)/g;
-			const replacer = (match) => match[1].toUpperCase();
-			return header.replace(snakeCaseRegex, replacer);
-		}); // Get headers and convert from snake_case to camelCase
+		const headers = rows[0].split(','); // Get headers
 		rows = rows.slice(1, rows.length - 1); // Get rows without header and last line which is empty
 		
+		// Create array of objects instead of array of arrays 
 		rows = rows.map(row => {
 			let columns = row.split(',');
-			let columnMap = new Map();
+			let columnMap = {};
 			columns.forEach((column, index) => {
-				columnMap.set(headers[index], column);
+				columnMap[headers[index]] = column;
 			});
 			return columnMap;
 		});

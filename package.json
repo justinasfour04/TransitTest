@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Transit Homework Assignment",
   "main": "Main.js",
-  "dependencies": {},
+  "dependencies": {
+    "papaparse": "^4.6.0"
+  },
   "devDependencies": {
     "eslint": "^5.4.0"
   },
